@@ -4,10 +4,17 @@ namespace BBTest
 {
     public class Checkout : ICheckout
     {
-        public decimal CalculateTotal(IBasket basket)
+        private readonly IBasket _basket;
+
+        public Checkout(IBasket basket)
+        {
+            _basket = basket;
+        }
+
+        public decimal CalculateTotal()
         {
             var result = new decimal(0.00);
-            foreach (var item in basket.Items)
+            foreach (var item in _basket.Items)
             {
                 switch (item)
                 {
@@ -24,7 +31,7 @@ namespace BBTest
             }
 
             //this will return the total without applying the special offers
-            result = ApplySpecialOffers(basket, result);
+            result = ApplySpecialOffers(_basket, result);
 
             return result;
         }

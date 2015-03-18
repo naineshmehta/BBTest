@@ -11,7 +11,7 @@ namespace BBTest
         public void Setup()
         {
             _basket = new Basket();
-            _checkout = new Checkout();
+            _checkout = new Checkout(_basket);
         }
 
         [Test]
@@ -41,7 +41,7 @@ namespace BBTest
         public void AddItemToBasketAndCalculateCorrectItemTotal(string item, double expected)
         {
             _basket.Add(item);
-            Assert.AreEqual(_checkout.CalculateTotal(_basket), expected);
+            Assert.AreEqual(_checkout.CalculateTotal(), expected);
         }
 
         [TestCase("bread,milk,butter", 2.95)]
@@ -49,7 +49,7 @@ namespace BBTest
         public void AddBreakMilkButterShouldReturnCorrectTotal(string items, double expected)
         {
             _basket.Add(items);
-            Assert.AreEqual(_checkout.CalculateTotal(_basket), expected);
+            Assert.AreEqual(_checkout.CalculateTotal(), expected);
         }
 
         [TestCase("butter,butter,bread", 2.10)]
@@ -59,7 +59,7 @@ namespace BBTest
         public void BasketWithMultipleItemsandSpecialOffers(string items, double expected)
         {
             _basket.Add(items);
-            Assert.AreEqual(_checkout.CalculateTotal(_basket), expected);
+            Assert.AreEqual(_checkout.CalculateTotal(), expected);
         }
     }
 }
