@@ -1,0 +1,7 @@
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\obj\Debug\BBTest.csprojResolveAssemblyReference.cache
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\bin\Debug\BBTest.dll
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\bin\Debug\BBTest.pdb
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\bin\Debug\nunit.framework.dll
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\bin\Debug\nunit.framework.xml
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\obj\Debug\BBTest.dll
+c:\users\nainesh\documents\visual studio 2010\Projects\BBTest\obj\Debug\BBTest.pdb
