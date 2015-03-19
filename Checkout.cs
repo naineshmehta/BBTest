@@ -38,21 +38,28 @@ namespace BBTest
 
         private static decimal ApplySpecialOffers(IBasket basket, decimal result)
         {
-            //we need to see if there are any offers to apply
+            //for each 2 butters, 1 bread is 50% off
             var butterCount = basket.Items.Count(s => s == "butter");
             if (butterCount > 0)
             {
-                var butterOffers = butterCount % 2;
+                var butterOffers = butterCount / 2;
+                var breadCount = basket.Items.Count(s => s == "bread");
 
-                if (butterOffers == 0)
+                if (breadCount > 0)
                 {
-                    //for each 2 butters, 1 bread is 50% off
-                    result = result - (decimal)0.5;
+                    if (butterOffers > breadCount)
+                    {
+                        result = result - (breadCount * (decimal)0.5);
+                    }
+                    else
+                    {
+                        result = result - (butterOffers * (decimal)0.5);                        
+                    }
                 }
             }
 
+            //buy 3 milk and get the 4th free
             var milkCount = basket.Items.Count(s => s == "milk");
-            
             if (milkCount > 0 && milkCount % 4 == 0)
             {
                 var numberOffers = milkCount / 4;
