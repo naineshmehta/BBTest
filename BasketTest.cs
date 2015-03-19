@@ -59,12 +59,8 @@ namespace BBTest
         }
 
         [TestCase("butter,butter,bread", 2.10)]
-        [TestCase("butter,butter,bread,bread", 3.10)]
-        [TestCase("butter,butter,butter,bread,bread", 3.90)]
-        [TestCase("butter,butter,butter,bread,bread,bread,bread", 5.90)]
-        [TestCase("butter,butter,milk", 2.75)]
         [TestCase("milk,milk,milk,milk", 3.45)]
-        [TestCase("butter,butter,bread,milk,milk,milk,milk,milk,milk,milk,milk", 9.00)]
+        [TestCase("butter,butter,bread,milk,milk,milk,milk,milk,milk,milk,milk", 9.00)]      
         public void BasketWithMultipleItemsandSpecialOffers(string items, double expected)
         {
             _basket.Add(items);
